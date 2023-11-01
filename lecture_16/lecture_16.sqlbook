@@ -29,6 +29,8 @@ panel on the left:
 
 
 <img src="figures/serverconnection_sql_vscode-3.png" alt="drawing" width="300"/>
+-- SQLBook: Code
+-- Schema is a way to organizw data
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Create SQL Table from Scratch </span>
 -- SQLBook: Markup
@@ -51,6 +53,8 @@ Create empty table from codebook
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
+-- the number in brackets is max number of characters
+
 
 CREATE TABLE drivers(
     driver_id int,
@@ -99,7 +103,8 @@ Try it yourself!
 -- Select a new driver id (needs to be unique)
 -- Make sure to deparate arguments by a semicolon!
 
-
+INSERT INTO drivers  VALUES (5, 'Max Verstappen', 'Dutch', 51);
+INSERT INTO drivers VALUES (6, 'Pablo', 'Colombian',6);
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Dataset Operations </span>
@@ -188,7 +193,8 @@ with more than 60 victories
 -- Write your own code!
 
 
-
+SELECT nationality, driver_id FROM drivers
+WHERE victories>60;
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
 
@@ -198,6 +204,7 @@ Groupby + Aggregate
 -- SQLBook: Code
 -- This command computes summary statistics by nationalitySELECT COUNT(*) AS num_rows,
 -- Including "nationality" (the grouping column) is optional in the select
+-- Same as groupby in python
 SELECT nationality,
        SUM(victories) AS sum_victories,
        AVG(victories) AS mean_victories,
