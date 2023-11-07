@@ -26,13 +26,13 @@ United States Congress dataset
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Create and Activate a New Database </span>
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1698696003023@@127.0.0.1@5432@us_congress
 
 DROP DATABASE IF EXISTS us_congress;
 -- SQLBook: Code
 CREATE DATABASE us_congress;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698696003023@@127.0.0.1@5432@us_congress
 CREATE SCHEMA bills;
 
 CREATE SCHEMA members;
@@ -43,10 +43,12 @@ CREATE SCHEMA members;
 
 - Click on the ```Active Connection``` button and choose the correct database
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698696003023@@127.0.0.1@5432@us_congress@members
 DROP TABLE IF EXISTS bills.bills_actions;
 DROP TABLE IF EXISTS bills.bills_subjects;
 DROP TABLE IF EXISTS members.us_congress_members;
+
+DROP TABLE IF EXISTS bills_subjects
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Import CSV into SQL </span>
 
